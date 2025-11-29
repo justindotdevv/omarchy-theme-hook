@@ -2,6 +2,10 @@
 
 output_file="$HOME/.config/omarchy/current/theme/colors.fish"
 
+if ! command -v fish >/dev/null 2>&1; then
+    skipped "Fish - Colors"
+fi
+
 if [[ ! -f "$output_file" ]]; then
     cat > "$output_file" << EOF
 set -U background '#${primary_background}'

@@ -2,6 +2,10 @@
 
 output_file="$HOME/.config/omarchy/current/theme/fzf.fish"
 
+if ! command -v fish >/dev/null 2>&1; then
+    skipped "Fish - FZF"
+fi
+
 if [[ ! -f "$output_file" ]]; then
     cat > "$output_file" << EOF
 set -l color00 '#${normal_black}'
