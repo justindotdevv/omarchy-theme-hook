@@ -32,12 +32,16 @@ mv -f /tmp/theme-hook/theme-set $HOME/.config/omarchy/hooks/
 mkdir -p $HOME/.config/omarchy/hooks/theme-set.d/
 mv -f /tmp/theme-hook/theme-set.d/* $HOME/.config/omarchy/hooks/theme-set.d/
 
+# Copy uninstall script to hooks directory
+mv -f /tmp/theme-hook/uninstall-theme-hook.sh $HOME/.config/omarchy/hooks/
+
 # Remove any new temp files
 rm -rf /tmp/theme-hook
 
 # Update permissions
 chmod +x $HOME/.config/omarchy/hooks/theme-set
 chmod +x $HOME/.config/omarchy/hooks/theme-set.d/*
+chmod +x $HOME/.config/omarchy/hooks/uninstall-theme-hook.sh
 
 # Update Omarchy theme
 echo "Executing theme hook.."
