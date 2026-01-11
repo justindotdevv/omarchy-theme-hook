@@ -22,6 +22,12 @@ dot() {
     esac
 }
 
+open_hooks_dir() {
+    if [[ -d ~/.config/omarchy/hooks/theme-set.d ]]; then
+        xdg-open ~/.config/omarchy/hooks/theme-set.d & disown
+    fi
+}
+
 get_hook_list() {
     enabled_hooks=()
     disabled_hooks=()
@@ -175,13 +181,16 @@ help() {
     echo -e "Usage: thctl [command] [theme]"
     echo
     echo -e "Commands:"
-    echo -e "$(dot "muted")  list       List all available themes"
     echo -e "$(dot "muted")  enable     Enable a theme"
     echo -e "$(dot "muted")  disable    Disable a theme"
+    echo -e "$(dot "muted")  list       List all available themes"
+    echo -e "$(dot "muted")  open       Open the hooks directory"
     echo -e "$(dot "muted")  help       Show this help message"
 }
 
 case $1 in
+    open) open_hooks_dir ;;
+    o) open_hooks_dir ;;
     list) get_hook_list ;;
     l) get_hook_list ;;
     enable) enable_hooks "$@" ;;
