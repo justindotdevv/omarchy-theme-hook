@@ -20,6 +20,12 @@ if ! command -v jq >/dev/null 2>&1; then
     exit 0
 fi
 
+# check current theme for vscode.json
+if [[ -f "$HOME/.config/omarchy/current/theme/vscode.json" ]]; then
+    echo "Existing VS Code theme detected. Skipping generation.."
+    exit 0
+fi
+
 # Ensure settings directory and file exist
 mkdir -p "$(dirname "$settings_file")"
 [[ ! -f "$settings_file" ]] && echo '{}' > "$settings_file"
@@ -603,7 +609,7 @@ if jq --argjson ui "$ui_colors" \
      "editor.tokenColorCustomizations": $syntax
    }' "$settings_file" > "$settings_file.tmp" 2>/dev/null; then
     mv "$settings_file.tmp" "$settings_file"
-    success "VS Code"
+    success "VS Code theme updated!"
 else
     rm -f "$settings_file.tmp"
     error "VS Code: Failed to update settings.json"
