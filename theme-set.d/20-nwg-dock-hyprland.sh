@@ -67,12 +67,11 @@ button:hover {
     background-color: rgba($rgb_bright_black, 0.5); /* base02 */
 }
 EOF
-fi
 
 mkdir -p "$HOME/.config/nwg-dock-hyprland"
 style_file="$HOME/.config/nwg-dock-hyprland/style.css"
 if [[ ! -f $style_file ]]; then
-  cat >$style_file <<EOF
+  cat > $style_file <<EOF
 @import url("./colors.css");
 
 window {

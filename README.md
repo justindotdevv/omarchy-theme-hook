@@ -54,6 +54,12 @@ theme-hook-update
 - Zed
 - Zen Browser (experimental - requires manual enabling of legacy userchrome styling)
 
+## Uninstalling
+You can remove the theme hook by running the following command:
+```
+curl -fsSL https://imbypass.github.io/omarchy-theme-hook/uninstall.sh | bash
+```
+
 ## FAQ
 
 #### I installed the hook, but none of my apps are theming!
