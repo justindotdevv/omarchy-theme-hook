@@ -183,8 +183,11 @@ help() {
 
 case $1 in
     list) get_hook_list ;;
+    l) get_hook_list ;;
     enable) enable_hooks "$@" ;;
+    e) enable_hooks "$@" ;;
     disable) disable_hooks "$@" ;;
+    d) disable_hooks "$@" ;;
     help) help ;;
     *) help; exit 0 ;;
 esac
