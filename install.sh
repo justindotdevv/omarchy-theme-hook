@@ -19,10 +19,6 @@ rm -rf /tmp/theme-hook/
 echo -e "Downloading theme hook.."
 git clone https://github.com/imbypass/omarchy-theme-hook.git /tmp/theme-hook > /dev/null
 
-# Create an update alias
-mv -f /tmp/theme-hook/install.sh $HOME/.local/share/omarchy/bin/theme-hook-update
-chmod +x $HOME/.local/share/omarchy/bin/theme-hook-update
-
 # Create a theme control alias
 mv -f /tmp/theme-hook/thctl $HOME/.local/share/omarchy/bin/thctl
 chmod +x $HOME/.local/share/omarchy/bin/thctl
